@@ -9,6 +9,41 @@
 </head>
 
 <body>
+    <!-- EJERCICIO 1. (CONDICIÓN: RESOLVER ENCAPSULANDO EN FUNCIONES)
+Hacer un programa que me permita crear un tablero de ajedrez dinámico, donde
+pueda elegir, pidiéndolo por pantalla, el ancho de las casillas y la cantidad de casillas que tiene que tener el tablero por lado.
+
+profesor: usar tres funciones, una para el ancho, una para el numero de casillas, una par ahacer el ajedrez.-->
+
+    <!--Paso 1. Hacer una función que me pida y me de el numero de casillas.
+    Paso 2. Hacer una funcion que me pida y me de el ancho del tablero.
+    Paso 3. Hacer una función que me haga el tablero.-->
+
+    <!--El numero de casillas debe pintarme div cuadrados, que tienen que ser cada uno de un color y luego se tienen que repartir el espacio del div que sea el tablero.-->
+
+
+    <script>
+
+        let nCasillas = Number(prompt('Dime de cuántas casillas quieres el tablero'))
+        let ladoTablero = Number(prompt('Dime en px el tamaño del lado del tablero'))
+
+        function generarTablero(pLado) {
+            return tablero = `<div style=; display: flex; flex-direction: row; width: ${pLado}px; height: ${pLado}px">`
+        }
+
+        function generarCasillas(pCasillas) {
+            let casillas = ''
+            for (i = 1; i < pCasillas; i++) {
+                casillas += ` `;
+            }
+        }
+
+        function pintarTablero(pContenedor, pContenido) {
+            document.write(pContenedor + pContenido + '</div>')
+        }
+
+        pintarTablero(generarTablero(ladoTablero), generarCasillas(nCasillas))
+    </script>
 
 </body>
 

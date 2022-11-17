@@ -10,6 +10,93 @@
 
 <body>
 
+    <!--EJERCICIO 4. (CONDICION: REUTILIZAR FUNCIONALIDAD Y
+ENCAPSULAR CADA ACCIÓN EN UN FUNCIÓN)
+Realizar un programa con un listado de productos.
+Para la realización de este programa tendré que crear un array que tenga productos
+con los siguientes datos.
+name es un string
+price es un number
+stock es un Boolean
+category es un string y hay 5 categories posibles ‘lacteos’, ‘carnes’, ‘frutas’, ‘verduras’,
+‘pescados’.
+1- Realizar un array con 10 productos de diferentes datos con diferentes categorías.
+2 - Filtrar productos que estén entre 1 y 3 euros (ojo capacidad de abstracción).
+3 - Filtrar por categoria
+4 - filtrar por disposición de stock
+5 - filtrar productos entre 1 y 3 euros que tengan stock.
+
+profesor: son dos funciones? es importante lo de reutilizar con el numero 5
+
+paso 1. hacer una función que me filtre. hacer que me filtre por categoria, por precio, por stock. /puede que el filtrado de precio sea distinta por el tema de colocar un rango?
+paso 2. hacer una función que me filtre dos veces-->
+
+    <script>
+        const productos = new Array(
+            {
+                name: 'Tomate',
+                price: 1.5,
+                stock: true,
+                category: 'verduras',
+            },
+            {
+                name: 'Pimiento',
+                price: 0.7,
+                stock: true,
+                category: 'verduras',
+            },
+            {
+                name: 'Cebolla',
+                price: 1.7,
+                stock: false,
+                category: 'verduras',
+            },
+            {
+                name: 'Platano',
+                price: 2.7,
+                stock: false,
+                category: 'frutas',
+            },
+            {
+                name: 'Piña',
+                price: 3.5,
+                stock: true,
+                category: 'frutas',
+            },
+            {
+                name: 'Naranja',
+                price: 0.9,
+                stock: false,
+                category: 'frutas',
+            },
+            {
+                name: 'Mozarella',
+                price: 4,
+                stock: false,
+                category: 'Lacteos',
+            },
+            {
+                name: 'LecheDesnatada',
+                price: 2.5,
+                stock: true,
+                category: 'Lacteos',
+            },
+            {
+                name: 'JamonYork',
+                price: 0.5,
+                stock: false,
+                category: 'Carnes',
+            },
+            {
+                name: 'JamonSerrano',
+                price: 5,
+                stock: true,
+                category: 'Carnes',
+            },
+        )
+
+    </script>
+
 </body>
 
 </html>

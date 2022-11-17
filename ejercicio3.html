@@ -10,6 +10,100 @@
 
 <body>
 
+    <!--
+        EJERCICIO 3 . (CONDICION: DEBERIA FUNCIONAR TODOS LOS METODOS PARA CUALQUIER LISTADO DE NOMINAS)
+Realizar un programa que calcule y añada a mi lista un nuevo campo en cada objeto
+sueldo neto anual y sueldo neto mensual.
+Calcular netoAnual = bruto - ((bruto * irpf ) / 100)
+netoMensual = netoAnual / pagas
+
+profesor: calcular el neto se puede hacer con funcion fuera (array) o dentro(this)
+        
+        paso 1. calcular el sueldo neto anual
+    paso 2. calcular el sueldo neto mensual
+paso 3. añadir los nuevos campos a cada objeto
+
+//donde izaskun enseño lo de o con punto o corchete, un poco mas arriba explico como meter cosas nuevas. el profesor dice que se puede hacer con funciones dentro o con funciones fuera
+
+-->
+    <script>
+
+        const nominas = new Array(
+            {
+                id: 1,
+                nombre: 'Juan',
+                bruto: 30000,
+                irpf: 19,
+                pagas: 12,
+            },
+            {
+                id: 2,
+                nombre: 'Manu',
+                bruto: 20000,
+                irpf: 15,
+                pagas: 14,
+            },
+            {
+                id: 3,
+                nombre: 'Ruben',
+                bruto: 22000,
+                irpf: 17,
+                pagas: 16,
+            },
+            {
+                id: 4,
+                nombre: 'Danny',
+                bruto: 19000,
+                irpf: 14,
+                pagas: 12,
+            },
+
+        )
+
+        // for (let trabajador of nominas) {
+        //     let netoAnual = trabajador.bruto - ((trabajador.bruto * trabajador.irpf) / 100);
+        //     console.log(netoAnual);
+        //     let netoMensual = netoAnual / trabajador.pagas;
+        //     console.log(netoMensual);
+        //     trabajador.salarioAnual = parseInt(netoAnual);
+        //     trabajador.salarioMensual = parseInt(netoMensual);
+        // }
+
+        // for (let trabajador of nominas) {
+        //     console.log(trabajador);
+        // }
+
+
+        //DECLARACIÓN DE FUNCIONES
+
+        function añadiraLista(pNominas) {
+            for (let trabajador of pNominas) {
+                trabajador.salarioAnual = calcNetoAnual(trabajador.bruto, trabajador.irpf);
+                trabajador.salarioMensual = calcNetoMensual(netoAnual, trabajador.pagas);
+            }
+        }
+
+        function calcNetoAnual(pBruto, pIrpf) {
+            return netoAnual = parseInt(pBruto - ((pBruto * pIrpf) / 100));
+        }
+
+        function calcNetoMensual(pAnual, pPagas) {
+            return netoMensual = parseInt(pAnual / pPagas)
+        }
+
+        //LLAMADA A LA FUNCIÓN
+
+        añadiraLista(nominas)
+
+        //COMPROBACIÓN
+
+        for (let trabajador of nominas) {
+            console.log(trabajador);
+        }
+
+
+
+    </script>
 </body>
 
 </html>
