@@ -95,6 +95,38 @@ paso 2. hacer una función que me filtre dos veces-->
             },
         )
 
+
+
+        function filtrarPrecios(pLista) {
+            return filtroPrecio = pLista.filter(producto => producto.price <= 3 && producto.price >= 1);
+        }
+
+        function filtrarStock(pLista, pStock) {
+            return filtroStock = pLista.filter(function (producto) { if (producto.stock == pStock) { return true; } });
+        }
+
+        function filtrarCategoria(pLista, pCategoria) {
+            return filtroCategoria = pLista.filter(producto => producto.category == pCategoria)
+        }
+
+        // NI DE COÑA HERMANO function doblefiltro(pLista, pFiltro1, pFiltro2, pStock) {
+        //     let doblefiltrado = pFiltro1(pLista);
+        //     doblefiltrado = pFiltro2(pLista, pStock);
+        //     return doblefiltrado;
+        // }
+
+        filtrarPrecios(productos);
+        console.log(filtroPrecio);
+        filtrarStock(productos, true);
+        console.log(filtroStock);
+        filtrarCategoria(productos, 'Carnes');
+        console.log(filtroCategoria)
+        doblefiltro(productos, filtrarPrecios, filtrarStock, true);
+        console.log(doblefiltrado);
+
+//la función que hay dentro del filter podría sacarla y hacer que una fuera funcion filtrarStock y la otra funcion filtrarPrecio, y la función en la que ahora están contenida que se llamara filtar y que uno de los parametros fuera elegir que funcion quiero. las funciones nuevas estas no deberían meter parametros sino estar prefijadas ya?
+//No entiendo muy bien como funciona el filter
+
     </script>
 
 </body>
