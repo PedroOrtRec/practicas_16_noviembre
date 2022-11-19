@@ -46,10 +46,10 @@ category es un string y hay 5 categories posibles ‘lacteos’, ‘carnes’, �
                 category: 'verduras',
             },
             {
-                name: 'Cebolla',
+                name: 'Sardina',
                 price: 1.7,
                 stock: false,
-                category: 'verduras',
+                category: 'pescado',
             },
             {
                 name: 'Platano',
@@ -97,29 +97,45 @@ category es un string y hay 5 categories posibles ‘lacteos’, ‘carnes’, �
 
         //DECLARACIÓN DE FUNCIONES
 
-        function filtrarPrecios(pLista) {
-            return filtroPrecio = pLista.filter(producto => producto.price <= 3 && producto.price >= 1);
+        function filtrarPrecios(pLista, pPrecio1, pPrecio2) {
+            return filtroPrecio = pLista.filter(producto => producto.price <= pPrecio2 && producto.price >= pPrecio1);
         }
 
         function filtrarStock(pLista, pStock) {
-            return filtroStock = pLista.filter(function (producto) { if (producto.stock == pStock) { return true; } });
+            return filtroStock = pLista.filter(producto => producto.stock == pStock);
         }
 
         function filtrarCategoria(pLista, pCategoria) {
             return filtroCategoria = pLista.filter(producto => producto.category == pCategoria)
         }
 
-        function dobleFiltrar(pLista, pStock) {
+        function dobleFiltrar(pLista, pStock, pPrecio1, pPrecio2) {
             let doblefiltro = filtrarStock(pLista, pStock);
-            return doblefiltro = filtrarPrecios(doblefiltro);
+            return doblefiltro = filtrarPrecios(doblefiltro, pPrecio1, pPrecio2);
+        }
+
+        //FUNCIÓN REUTILIZABLE
+
+        function filtrar(pLista, pFiltro) {
+            if (typeof pFiltro === 'boolean') {
+                return filtroStock = pLista.filter(producto => producto.stock == pFiltro);
+            } else if (typeof pFiltro === 'string') {
+                return filtroCategoria = pLista.filter(producto => producto.category == pFiltro)
+            }
         }
 
         //COMPROBACIÓN
 
-        console.log(filtrarPrecios(productos));
+        console.log(filtrarPrecios(productos, 1, 3));
         console.log(filtrarStock(productos, true));
         console.log(filtrarCategoria(productos, 'Carnes'));
-        console.log(dobleFiltrar(productos, true));
+        console.log(dobleFiltrar(productos, true, 1, 3));
+
+        //--
+
+        console.log(filtrar(productos, false));
+        console.log(filtrar(productos, 'Lacteos'));
+
 
     </script>
 
