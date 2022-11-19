@@ -24,11 +24,50 @@ una cadena de caracteres tiene longitud y se puede iterar.
 
 
         profesor: el tema de los espacios, alomejor investigar nos ayuda en algo.  una de las tres funcionalidades se usa en hacer otra. el orden para hacer las funcionalidades no es el que sale en el ejercicio.
+        coje la cadena de caracteres y aplicale a la variable el .split, y dentro del split como parametros pasale un espacio en blanco. eso te lo convierte en un array (los espacios en blanco), joint es lo contrario. Otra opción es la función replace, que recibe dos, el parametro que quieres sustituir por el parametro por el que lo quieres sustituir.
     -->
 
     <script>
+        //DECLARACIÓN DE VARIABLES Y FUNCIONES
+
+        const frase = 'En un lugar de la mancha';
+
+        function contarLetras(pFrase) {
+            let numeroTotal = 0;
+            for (caracter of pFrase) {
+                if (caracter !== ' ') {
+                    numeroTotal++;
+                }
+            }
+            return numeroTotal
+        }
+
+        function contarRepetidas(pFrase, pLetra) {
+            let numeroRepetidas = 0;
+            for (caracter of pFrase) {
+                if (caracter.toLowerCase() == pLetra.toLowerCase()) {
+                    numeroRepetidas++;
+                }
+            }
+            return numeroRepetidas
+        }
+
+        function eliminarEspacios(pFrase) {
+            //iterar los caracteres de la cadena a través de un bucle. Seleccionar los espacios y borrarlos.
+
+            return pFrase.replace(' ', '');
+
+        }
 
 
+
+
+
+        //COMPROBACION
+
+        console.log(contarLetras(frase));
+        console.log(contarRepetidas(frase, 'a'))
+        console.log(eliminarEspacios(frase))
 
     </script>
 

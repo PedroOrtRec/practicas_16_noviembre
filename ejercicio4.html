@@ -10,7 +10,8 @@
 
 <body>
 
-    <!--EJERCICIO 4. (CONDICION: REUTILIZAR FUNCIONALIDAD Y
+    <!--
+EJERCICIO 4. (CONDICION: REUTILIZAR FUNCIONALIDAD Y
 ENCAPSULAR CADA ACCIÓN EN UN FUNCIÓN)
 Realizar un programa con un listado de productos.
 Para la realización de este programa tendré que crear un array que tenga productos
@@ -25,13 +26,12 @@ category es un string y hay 5 categories posibles ‘lacteos’, ‘carnes’, �
 3 - Filtrar por categoria
 4 - filtrar por disposición de stock
 5 - filtrar productos entre 1 y 3 euros que tengan stock.
-
-profesor: son dos funciones? es importante lo de reutilizar con el numero 5
-
-paso 1. hacer una función que me filtre. hacer que me filtre por categoria, por precio, por stock. /puede que el filtrado de precio sea distinta por el tema de colocar un rango?
-paso 2. hacer una función que me filtre dos veces-->
+    -->
 
     <script>
+
+        //Array
+
         const productos = new Array(
             {
                 name: 'Tomate',
@@ -95,7 +95,7 @@ paso 2. hacer una función que me filtre dos veces-->
             },
         )
 
-
+        //DECLARACIÓN DE FUNCIONES
 
         function filtrarPrecios(pLista) {
             return filtroPrecio = pLista.filter(producto => producto.price <= 3 && producto.price >= 1);
@@ -109,23 +109,17 @@ paso 2. hacer una función que me filtre dos veces-->
             return filtroCategoria = pLista.filter(producto => producto.category == pCategoria)
         }
 
-        // NI DE COÑA HERMANO function doblefiltro(pLista, pFiltro1, pFiltro2, pStock) {
-        //     let doblefiltrado = pFiltro1(pLista);
-        //     doblefiltrado = pFiltro2(pLista, pStock);
-        //     return doblefiltrado;
-        // }
+        function dobleFiltrar(pLista, pStock) {
+            let doblefiltro = filtrarStock(pLista, pStock);
+            return doblefiltro = filtrarPrecios(doblefiltro);
+        }
 
-        filtrarPrecios(productos);
-        console.log(filtroPrecio);
-        filtrarStock(productos, true);
-        console.log(filtroStock);
-        filtrarCategoria(productos, 'Carnes');
-        console.log(filtroCategoria)
-        doblefiltro(productos, filtrarPrecios, filtrarStock, true);
-        console.log(doblefiltrado);
+        //COMPROBACIÓN
 
-//la función que hay dentro del filter podría sacarla y hacer que una fuera funcion filtrarStock y la otra funcion filtrarPrecio, y la función en la que ahora están contenida que se llamara filtar y que uno de los parametros fuera elegir que funcion quiero. las funciones nuevas estas no deberían meter parametros sino estar prefijadas ya?
-//No entiendo muy bien como funciona el filter
+        console.log(filtrarPrecios(productos));
+        console.log(filtrarStock(productos, true));
+        console.log(filtrarCategoria(productos, 'Carnes'));
+        console.log(dobleFiltrar(productos, true));
 
     </script>
 
