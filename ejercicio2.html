@@ -53,21 +53,16 @@ una cadena de caracteres tiene longitud y se puede iterar.
         }
 
         function eliminarEspacios(pFrase) {
-            //iterar los caracteres de la cadena a través de un bucle. Seleccionar los espacios y borrarlos.
-
-            return pFrase.replace(' ', '');
-
+            let fraseDes = pFrase.split(' ');
+            fraseDes = fraseDes.join('');
+            return fraseDes;
         }
-
-
-
-
 
         //COMPROBACION
 
         console.log(contarLetras(frase));
-        console.log(contarRepetidas(frase, 'a'))
-        console.log(eliminarEspacios(frase))
+        console.log(contarRepetidas(frase, 'a'));
+        console.log(eliminarEspacios(frase));
 
     </script>
 

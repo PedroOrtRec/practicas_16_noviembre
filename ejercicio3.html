@@ -70,19 +70,20 @@ netoMensual = netoAnual / pagas
 
         //DECLARACIÓN DE FUNCIONES
 
-        function añadiraLista(pNominas) {
-            for (let trabajador of pNominas) {
-                trabajador.salarioAnual = calcNetoAnual(trabajador.bruto, trabajador.irpf);
-                trabajador.salarioMensual = calcNetoMensual(netoAnual, trabajador.pagas);
-            }
-        }
-
         function calcNetoAnual(pBruto, pIrpf) {
             return netoAnual = parseInt(pBruto - ((pBruto * pIrpf) / 100));
         }
 
         function calcNetoMensual(pAnual, pPagas) {
             return netoMensual = parseInt(pAnual / pPagas)
+        }
+
+
+        function añadiraLista(pNominas) {
+            for (let trabajador of pNominas) {
+                trabajador.salarioAnual = calcNetoAnual(trabajador.bruto, trabajador.irpf);
+                trabajador.salarioMensual = calcNetoMensual(netoAnual, trabajador.pagas);
+            }
         }
 
         //LLAMADA A LA FUNCIÓN
